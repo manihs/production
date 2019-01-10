@@ -1,0 +1,586 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+::placeholder{
+    font-size: 16px;
+    color:#aaadb2;
+}
+
+p{
+    margin:0;
+    padding: 0;
+}
+
+.highlight{
+    color: red !important;
+}
+
+.selected{
+    display: block !important;
+}
+.flyer-feed-container{
+    width: 100%;
+    margin-top: 40px;
+}
+
+.feed-post{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.feed-header{
+    width: 100%;
+    display: flex;
+    background: #f4f4f4;
+}
+
+.feed-header-avatar{
+    width: 40px;
+    height: 40px;
+    padding: 2%;
+}
+
+.feed-header-avatar img{
+    width: 100%;
+    height:100%;
+    border-radius:50%;
+}
+
+.feed-header-username{
+    display:flex;
+    flex-direction: column;
+    width: 75%;
+    padding: 2% 1%;
+}
+
+.feed-header-username--name{
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+}
+
+.feed-header-username--commname{
+    font-size: 12px;
+    color: blue;
+    font-weight: bold;
+    margin-top: 1%;
+}
+
+.feed-header-option{
+    position: relative;
+    color: grey;
+    font-size: 20px;
+    width: 10%;
+    text-align: center;
+    margin: 4% 0%;
+}
+.header-option-div{
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    height: 300px;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 3px;
+    box-shadow: 0 3px 40px rgba(0, 0, 0, .3);
+}
+
+.header-option-arrow{
+    display: none;
+    border-bottom: 8px solid #fff;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    content: '';
+    position: absolute;
+    top: 33px;
+    margin: 0px 0px 0px -8px;
+    left: 50%;
+}
+.feed-body{
+    width: 100%;
+}
+
+.feed-body--image{
+    width: 100%;
+}
+.feed-footer{
+    width: 100%;
+    background: white;
+}
+
+.feed-likes-view{
+    padding:3% 0%;
+    width:96%;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #a7abb0;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.feed-likes-views--likes{
+    padding: 0% 3%;
+}
+
+.feed-likes-views--comments{
+
+}
+
+.feed-caption-section{
+    padding: 3% 2%;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.feed-caption-section--text{
+    display: flex;
+    font-size: 15px;
+    word-wrap: break-word;
+    line-height: 19px;
+}
+
+.feed-likes-section{
+    display: flex;
+}
+.feed-like{
+    width: 33.3333%;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 3%;
+    text-align: center;
+    color: #aaadb2;
+}
+
+.show{
+    display:flex;
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height *//* Enable scroll if needed */ /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: absolute;
+    background-color: #fefefe;
+    width: 100%;
+    height: 90%;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
+    box-shadow: 0 0px 60px rgba(0, 0, 0, .3);
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 3.5% 2%;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  @-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+.modal-heading{
+    position: absolute;
+    width: 100%;
+    padding: 3% 10%;
+    top: 0;
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: 1px solid #c8c3c3;
+}
+  .modal-writecomment{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    padding: 45px 1%;
+  }
+
+  .modal-writecomment-avatar{
+    width: 40px;
+    height: 40px;
+  }
+  .modal-writecomment-avatar img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+  }
+  .modal-writecomment-input{
+    width: 80%;
+    padding: 1% 2%;
+    margin-left: 2%;
+    border-bottom: 1px solid #c8c3c3;
+  }
+
+  .modal-writecomment-input--input{
+    padding: 2% 0% 0% 0%;
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+    border: none;
+  }
+
+  .liked{
+      color: blue;
+  }
+
+  /* img form */
+
+  *{
+    padding: 0;
+    margin: 0;
+}
+
+p{
+    padding: 0;
+    margin:0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height *//* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #fefefe;
+    width: 100%;
+    height: 100%;
+    left:0;
+    right: 0;
+    margin: auto;
+
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 4.5% 3%;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+
+  .imageupload-form-header{
+    width: 100%;
+    font-size: 16px;
+    padding: 4% 12%;
+    font-weight: bold;
+    background: #d0cece;
+}
+
+.imageupload-caption-section{
+    display: flex;
+    padding: 2%;
+}
+
+.imageupload-caption-userpic{
+    height: 45px;
+    width: 45px;
+}
+
+.imageupload-caption-userpic--img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.imageupload-caption-input{
+    background-color: white;
+    width: 80%;
+    max-height: 15%;
+    outline: 0;
+    overflow: auto;
+    padding: 5px 5px;
+    margin-left: 2%;
+    resize: none;
+    word-wrap: break-word;
+
+}
+
+
+.imageupload-preview{
+    padding: 6% 2%;
+}
+/* .imageupload-button{
+    width: 65px;
+    background: #dfd1ab;
+    border-radius: 15px;
+    display: flex;
+    padding: 2% 3%;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Happy Monkey', cursive;
+} */
+
+
+.flyermob-imageupload-image{
+    width: 30%;
+    position: relative;
+}
+
+.uploaded-image-preview{
+    width: 100%;
+}
+
+.flyr-upload-icon{
+    position:absolute;
+    top: 31%;
+    left: 38%;
+}
+
+.file-upload{
+    display: none;
+}
+.file-upload-button{
+    font-size: 25px;
+}
+
+
+.imageupload-button--name{
+    padding: 0% 5%;
+    font-weight: bold;
+}
+  
+.imageupload-bottom-section{
+    display: flex;
+    flex-direction: column;
+}
+
+.imageupload-type-check{
+    display: flex;
+    padding: 3% 2% 5% 3%;
+    border-top: 1px solid #d0cece;
+    box-shadow: 0px 1px 1px #b9b5b9;
+}
+
+.imageupload-type-name{
+    font-weight: bold;
+}
+.flyr-upload-community-list{
+    overflow-y: auto;
+}
+
+.flyr-upload-community-list-item{
+    display: flex;
+}
+
+.flyr-upload-community-image{
+    height: 45px;
+    width: 45px;
+    margin-left:17px;
+}
+
+.flyr-upload-community-image img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.flyr-upload-community-name{
+    padding: 3% 2% 2% 2%;
+    width: 70%;
+    color: #888491;
+    font-size: 16px;
+}
+
+
+/*...................label..................*/
+.flyermob-checkbox-container {
+    display: flex;
+    width:100%;
+    padding: 2% 0%;
+    position: relative;
+    margin-top: 0px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.flyermob-checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* .container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 3px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}  */
+
+/* Create a custom checkbox */
+.flyermob-checkbox-checkmark {
+  position: absolute;
+  top:0;
+  left:0;
+  height: 100%;
+  display:none;
+  width: 12px;
+  background-color: #eee;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+.flyermob-checkbox-container input:checked ~ .flyermob-checkbox-checkmark {
+  display:flex;
+  background-color: #2196F3;
+}
+
+/* Style the checkmark/indicator */
+.flyermob-checkbox-container .flyermob-checkbox-checkmark:after {
+  left: -9999px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.selected{
+    background: #eeeeee;
+}
+
+.imageupload-postbutton{
+    /* position: absolute;
+    bottom: 0; */
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2% 2%;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, .3);
+    background: white;
+}
+
+.imageupload-postbutton--button{
+    width: 100%;
+    padding: 3% 0%;
+    font-family: inherit;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid #ffdf88;
+    background: linear-gradient(to bottom, #fff1ca -16%, #ffbc00 100%);
+}
+
+.card-img-top{
+    width: 100%;
+}
