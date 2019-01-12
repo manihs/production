@@ -8,6 +8,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
   <style>    
+
+      
 *{
       font-family: 'Raleway', sans-serif;
   }  
@@ -45,7 +47,7 @@
   margin: 10px auto;
   color: white;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 35px;
 }
 .login_button:after{
   content: ' ';
@@ -82,7 +84,15 @@
   margin: 10px auto;
   width: 80%;
 }
-
+.extra_links{
+  margin-top: 25px;
+  display: flex;
+  justify-content:space-around;
+}
+.bc_l{
+    color: #a45a00;
+}
+  
       
   </style>
 </head>
@@ -113,8 +123,20 @@
             </div>
         </div>
 
+        <div class="group" style="margin-top: 17px;">
+    <input type="checkbox" id="remember">
+    <label class="bc_l" for="remember">Remember password</label>
+    </div>
+     
+   
+
         </form> 
-        <div class="login_button" id="login">Login</div>
+        <div class="login_button">Login</div>
+     
+   <div class="extra_links">
+     <a href="">sign up</a>
+     <a href="">forgot password ?</a>
+   </div>
     </div>
 </div> 
 <script>
