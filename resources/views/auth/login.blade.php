@@ -191,7 +191,7 @@
       </div>
 <!--      -->
     </form>
-    <div id="signup">Sign Up</div>
+    <div class="login_button" id="signup">Sign Up</div>
    <div class="extra_links">
      <span></span>
      <a href=""  class="loginformlink">already have account ! login</a>
