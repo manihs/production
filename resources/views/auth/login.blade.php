@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+p<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Home</title>
@@ -7,9 +7,8 @@
   <meta name="theme-color" content="#ff9800">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
-  <style>
-      
-        *{
+  <style>    
+*{
       font-family: 'Raleway', sans-serif;
   }  
 .__login{
@@ -87,38 +86,41 @@
       
   </style>
 </head>
-<body>
-    
-    
-    <div class="__login">
- <div class="pro">
- </div>
- <div class="login_container">
-     <div class="container_logo">
-        <img src="http://theflyr.com/logo.png">
-     </div>
-     <form method="POST" action="{{ route('login') }}">
-                        @csrf
-     <div class="group">
-       <div class="label_input">Username</div>
-       <div class="input_group">
-         <input type="text" name="email" id="" placeholder="username">
-       </div>
-     </div>  
-   <div class="group">
-       <div class="label_input">Password</div>
-       <div class="input_group">
-         <input type="text" name="password" id="" placeholder="**********">
-       </div>
-     </div> 
-     </form>
-     </div> 
-   <div class="login_button" onclick="document.getElementById('form-id').submit();">Login</div>
- </div>
- </div>   
- 
+<body>  
+<div class="__login">
+    <div class="pro">
+    </div>
+    <div class="login_container">
+        <div class="container_logo">
+            <img src="http://theflyr.com/logo.png">
+        </div>
 
-    
-    
+
+        <form method="POST" action="{{ route('login') }}" id="login_form">
+                            @csrf
+                            <!--  -->
+        <div class="group">
+            <div class="label_input">Username</div>
+            <div class="input_group">
+                <input type="text" name="email" id="" placeholder="username">
+            </div>
+        </div>  
+                            <!--  -->
+        <div class="group">
+            <div class="label_input">Password</div>
+            <div class="input_group">
+                <input type="text" name="password" id="" placeholder="**********">
+            </div>
+        </div>
+
+        </form> 
+        <div class="login_button" id="login">Login</div>
+    </div>
+</div> 
+<script>
+$( "#login" ).click(function() {
+  $( "#login_form" ).submit();
+});
+</script>  
 </body>
 </html>
