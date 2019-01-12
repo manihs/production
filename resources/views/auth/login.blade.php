@@ -7,10 +7,8 @@
   <meta name="theme-color" content="#ff9800">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
-  <style>    
-
-      
-*{
+  <style>      
+ *{
       font-family: 'Raleway', sans-serif;
   }  
 .__login{
@@ -92,21 +90,34 @@
 .bc_l{
     color: #a45a00;
 }
-  
+.container_logo_sup{
+  margin-top: 2%;
+  text-align: center;
+}
+.container_logo_sup img{
+  width: 100px;
+}
+.sttwo,.stthree{
+  display:none;
+}
+
+      
       
   </style>
 </head>
-<body>  
+<body>
+    
+    
+     <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
 <div class="__login">
-    <div class="pro">
-    </div>
-    <div class="login_container">
-        <div class="container_logo">
-            <img src="http://theflyr.com/logo.png">
-        </div>
+ <div class="pro">
+ </div>
+ <div class="login_container stone">
+     <div class="container_logo">
+        <img src="http://theflyr.com/logo.png">
+     </div>
 
-
-        <form method="POST" action="{{ route('login') }}" id="login_form">
+    <form method="POST" action="{{ route('login') }}" id="login_form">
                             @csrf
                             <!--  -->
         <div class="group">
@@ -115,34 +126,125 @@
                 <input type="text" name="email" id="" placeholder="username">
             </div>
         </div>  
-                            <!--  -->
+                                <!--  -->
         <div class="group">
             <div class="label_input">Password</div>
             <div class="input_group">
                 <input type="text" name="password" id="" placeholder="**********">
-            </div>
-        </div>
-
-        <div class="group" style="margin-top: 17px;">
-    <input type="checkbox" id="remember">
-    <label class="bc_l" for="remember">Remember password</label>
-    </div>
-     
-   
-
-        </form> 
-        <div class="login_button">Login</div>
-     
+            </div>        
+        </div> 
+                             <!--  -->
+    </form>
+   <div class="login_button">Login</div>
    <div class="extra_links">
-     <a href="">sign up</a>
-     <a href="">forgot password ?</a>
+     <a href='' id="singupformlink">sign up?</a>
+     <a href="" id="paswordlink">forgot password ?</a>
    </div>
-    </div>
-</div> 
+ </div>
+  
+  
+  
+  <div class="login_container sttwo">
+<!--      -->
+    <div class="container_logo_sup">
+        <img src="http://theflyr.com/logo.png">
+     </div>
+
+     <form method="POST" action="{{ route('register') }}" id="login_signup">
+                        @csrf
+<!--      -->
+     <div class="group">
+       <div class="label_input">Name</div>
+       <div class="input_group">
+         <input type="text" name="name" id="" placeholder="name">
+       </div>
+     </div> 
+<!--      -->
+     <div class="group">
+       <div class="label_input">Email</div>
+       <div class="input_group">
+         <input type="text" name="email" id="" placeholder="Email">
+       </div>
+     </div>  
+<!--      -->
+     <div class="group">
+       <div class="label_input">password</div>
+       <div class="input_group">
+         <input type="text" name="password" id="" placeholder="username">
+       </div>
+     </div> 
+<!--      -->
+     <div class="group">
+       <div class="label_input">confirm password</div>
+       <div class="input_group">
+         <input type="text" name="password_confirmation" id="" placeholder="username">
+       </div>
+     </div>
+<!--      -->
+      <div class="group" style="margin-top: 17px;">
+        <input type="checkbox" id="remember">
+        <label class="bc_l" for="remember">mail</label>
+         <input type="checkbox" id="remember">
+        <label class="bc_l" for="remember">Femail</label>
+         <input type="checkbox" id="remember">
+        <label class="bc_l" for="remember">others</label>
+      </div>
+<!--      -->
+    </form>
+    <div id="signup">Sign Up</div>
+   <div class="extra_links">
+     <span></span>
+     <a href=""  class="loginformlink">already have account ! login</a>
+   </div>
+  </div>
+  
+  <div class="login_container stthree">
+<!--          -->
+    <div class="container_logo_sup">
+        <img src="http://theflyr.com/logo.png">
+     </div>
+<!--      -->
+     <div class="extra_links">
+     <span></span>
+     <a href=""  class="loginformlink">go to Login page</a>
+   </div>
+<!--      -->
+  </div>
+ </div>   
+ 
+
+    
+    
+</body>
+
 <script>
+
 $( "#login" ).click(function() {
   $( "#login_form" ).submit();
 });
-</script>  
-</body>
+
+$( "#signup" ).click(function() {
+  $( "#login_signup" ).submit();
+});
+
+$('#singupformlink').click(function(e){
+   e.preventDefault();
+  $('.sttwo').show();
+});
+
+$('.loginformlink').click(function(e){
+   e.preventDefault();
+  $('.sttwo').hide();  
+  $('.stthree').hide();  
+  $('.stone').show();
+
+});
+
+$('#paswordlink').click(function(e){
+   e.preventDefault();
+  $('.stthree').show();
+});
+
+</script>
+
 </html>
