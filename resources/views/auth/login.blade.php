@@ -135,7 +135,7 @@
         </div> 
                              <!--  -->
     </form>
-   <div class="login_button">Login</div>
+   <div class="login_button" id="login">Login</div>
    <div class="extra_links">
      <a href='' id="singupformlink">sign up?</a>
      <a href="" id="paswordlink">forgot password ?</a>
@@ -219,7 +219,7 @@
 
 <script>
 
-$( "#login" ).click(function() {
+$( "#login" ).after().click(function() {
   $( "#login_form" ).submit();
 });
 
