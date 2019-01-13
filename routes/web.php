@@ -30,6 +30,9 @@ Route::get('/video', function () {
     return view('videos');
 });
 
+Route::get('/profile', function () {
+    return view('profile');
+});
 
 
 Route::get('/create/community', function () {

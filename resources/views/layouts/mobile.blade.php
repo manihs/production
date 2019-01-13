@@ -278,7 +278,7 @@ color: white;
           <img class="menu" src="https://img.icons8.com/ios/50/000000/idea-sharing.png" style="width:70%">
           </div>
           <span>Idea's</span>
-        
+    <a href="/profile">
     </div>
       <div class="icon menu">
         <div>
@@ -288,6 +288,7 @@ color: white;
           
     </div>
     </div>
+    </a>
   </footer>
 <div class="blur"></div>
 @yield('script')
